@@ -9,13 +9,13 @@ function App() {
   const [randomMovies, setRandomMovies] = useState([]);
   const [isSearchActive, setIsSearchActive] = useState(false);
 
-  // Fetch random movies when the component mounts
+  
   useEffect(() => {
     const fetchRandomMovies = async () => {
       try {
         const randomTitles = ['Inception', 'Avatar', 'Titanic', 'Interstellar', 'Joker'];
         const moviePromises = randomTitles.map((title) =>
-          axios.get(`http://www.omdbapi.com/?t=${title}&apikey=5020cabe`)
+          axios.get(`https://www.omdbapi.com/?t=${title}&apikey=5020cabe`)
         );
         const movieResponses = await Promise.all(moviePromises);
         setRandomMovies(movieResponses.map((res) => res.data));
@@ -30,21 +30,21 @@ function App() {
     if (!searchTerm) return;
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?s=${searchTerm}&apikey=277026cd`
+        `https://www.omdbapi.com/?s=${searchTerm}&apikey=277026cd`
       );
       if (response.data.Response === 'True') {
         setMovies(response.data.Search);
         setError('');
-        setIsSearchActive(true); // Activate search mode
+        setIsSearchActive(true); 
       } else {
         setMovies([]);
         setError(response.data.Error);
-        setIsSearchActive(false); // Deactivate search mode
+        setIsSearchActive(false); 
       }
     } catch (err) {
       console.error(err);
       setError('Failed to fetch data. Please try again later.');
-      setIsSearchActive(false); // Deactivate search mode
+      setIsSearchActive(false); 
     }
   };
 
@@ -70,10 +70,10 @@ function App() {
             </button>
           </div>
 
-          {/* Error Message */}
+        
           {error && <p className="error-message">{error}</p>}
 
-          {/* Conditional Rendering: Show Suggested or Searched Movies */}
+      
           {!isSearchActive ? (
             <div className="random-movies">
               <h2>Suggested Movies</h2>
