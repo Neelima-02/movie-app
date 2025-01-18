@@ -1,0 +1,297 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: info;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+}
+
+.app-header {
+  background-color:#5bc0de;
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+}
+
+/* Main Section */
+.app-main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.head{
+  font-size:50px;
+  font-family:'saint serif';
+  font-style:italic;
+  color:red;
+
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #5dbea3;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.search-button:hover {
+  background-color: #b81c16;
+}
+
+.error-message {
+  color: #e50914;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Movies Grid */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.movie-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 0 10px;
+  word-wrap: break-word;
+  color: #175797;
+}
+
+.movie-year {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.movie-plot {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 0 10px 10px;
+  line-height: 1.4;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #141414;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+  }
+
+  .search-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-container {
+    padding: 15px;
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .search-button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .movie-poster {
+    height: 300px;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+
+  .movie-year {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-header p {
+    font-size: 0.9rem;
+  }
+
+  .search-input {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .search-button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .movies-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .movie-poster {
+    height: 250px;
+  }
+
+  .movie-title {
+    font-size: 0.9rem;
+  }
+
+  .movie-plot {
+    font-size: 0.8rem;
+  }
+}
